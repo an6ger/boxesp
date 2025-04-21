@@ -1036,7 +1036,7 @@ do
                 HealthBarFade = 0,
                 Fading = false,
                 State = false,
-                Visible = true,
+                Visible = false,
                 Drawings = {},
                 Components = {
                     Box = {
@@ -1362,8 +1362,8 @@ do
                         local transparency = Index == 1 and 0.75 or 0.5
                         local color = Index == 1 and Color3.fromRGB(93, 62, 152) or Color3.fromRGB(255, 255, 255)
                         --
-                        local extrasize = Index == 1 and 4 or 0
-                        local extraoffset = Index == 1 and -2 or 0
+                        local extrasize = Index == 0 and 0 or 0
+                        local extraoffset = Index == 0 and 0 or 0
                         --
                         local preview_character_head = utility:Create("Frame", {Vector2.new((preview_character.Size.X * 0.35) + (extraoffset), extraoffset), preview_character}, {
                             Size = utility:Size(0.3, extrasize, 0.2, 0, preview_character),
