@@ -1127,7 +1127,7 @@ do
                 Font = theme.font,
                 Color = theme.textcolor,
                 OutlineColor = theme.textborder,
-                Position = utility:Position(0, -(5 + 7), 0, 0, esppreview_inner)
+                Position = utility:Position(0, 0, 0, 0, esppreview_inner)
             }, window.VisualPreview.Drawings)
             --
             library.colors[esppreview_title] = {
@@ -1135,9 +1135,9 @@ do
                 Color = "textcolor"
             }
             --
-            local esppreview_inner_inline = utility:Create("Frame", {Vector2.new(4,18), esppreview_inner}, {
-                Size = utility:Size(1, -8, 1, -22, esppreview_inner),
-                Position = utility:Position(0, 4, 0, 18, esppreview_inner),
+            local esppreview_inner_inline = utility:Create("Frame", {Vector2.new(0,0), esppreview_inner}, {
+                Size = utility:Size(0, 0, 0, 0, esppreview_inner),
+                Position = utility:Position(0, 0, 0, 0, esppreview_inner),
                 Color = theme.inline
             }, window.VisualPreview.Drawings)
             --
@@ -1146,8 +1146,8 @@ do
             }
             --
             local esppreview_inner_outline = utility:Create("Frame", {Vector2.new(1,1), esppreview_inner_inline}, {
-                Size = utility:Size(1, -2, 1, -2, esppreview_inner_inline),
-                Position = utility:Position(0, 1, 0, 1, esppreview_inner_inline),
+                Size = utility:Size(0,  0, 0, 0, esppreview_inner_inline),
+                Position = utility:Position(0, 0, 0, 0, esppreview_inner_inline),
                 Color = theme.outline
             }, window.VisualPreview.Drawings)
             --
@@ -1165,14 +1165,14 @@ do
                 Color = "darkcontrast"
             }
             --
-            local esppreview_frame_previewbox = utility:Create("Frame", {Vector2.new(10,10), esppreview_inner_frame}, {
-                Size = utility:Size(1, -20, 1, -20, esppreview_inner_frame),
-                Position = utility:Position(0, 10, 0, 10, esppreview_inner_frame),
+            local esppreview_frame_previewbox = utility:Create("Frame", {Vector2.new(0,0), esppreview_inner_frame}, {
+                Size = utility:Size(0, 0, 0, 0, esppreview_inner_frame),
+                Position = utility:Position(0, 0, 0, 0, esppreview_inner_frame),
                 Color = Color3.fromRGB(0, 0, 0),
                 Transparency = 0
             })
             --
-            local BoxSize = utility:Size(1, -7, 1, -55, esppreview_frame_previewbox)
+            local BoxSize = utility:Size(0, 0, 0, 0, esppreview_frame_previewbox)
             local healthbaroutline
             local healthbar
             local healthvalue
@@ -1187,13 +1187,13 @@ do
                 healthvalue.Text = "<- " .. math.round(Smoothened * 100)
                 healthvalue.Color = Color
                 healthbar.Color = Color
-                healthbar.Size = utility:Size(1, -2, 0, Size, healthbaroutline)
-                healthbar.Position = utility:Position(0, 1, 1, -Size - 1, healthbaroutline)
-                utility:UpdateOffset(healthbar, {Vector2.new(1, healthbaroutline.Size.Y - Size - 1), healthbaroutline})
+                healthbar.Size = utility:Size(0, 0, 0, Size, healthbaroutline)
+                healthbar.Position = utility:Position(0, 0, 0, -Size - 0, healthbaroutline)
+                utility:UpdateOffset(healthbar, {Vector2.new(0, healthbaroutline.Size.Y - Size - 0), healthbaroutline})
             end
             --
             function window.VisualPreview:UpdateHealthValue(Size)
-                local New = Vector2.new(healthbar.Position.X + (5 - Size), math.clamp(healthbar.Position.Y + 5, 0, (healthbar.Position.Y) + (healthbar.Size.Y) - 18))
+                local New = Vector2.new(healthbar.Position.X + (0 - Size), math.clamp(healthbar.Position.Y + 0, 0, (healthbar.Position.Y) + (healthbar.Size.Y) - 18))
                 --
                 healthvalue.Position = New
                 utility:UpdateOffset(healthvalue, {Vector2.new(5 - Size, New.Y - healthbar.Position.Y), healthbar})
